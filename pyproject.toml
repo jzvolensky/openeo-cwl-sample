@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "openeo-cwl-sample"
+version = "0.1.0"
+description = ""
+authors = ["jzvolensky <juro.zvolensky@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.14"
+pystac = "^1.10.1"
+requests = "^2.32.3"
+cwltool = "^3.1.20240909164951"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

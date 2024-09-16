@@ -1,0 +1,121 @@
+{
+  "type": "Collection",
+  "id": "MOD10A1v61",
+  "stac_version": "1.0.0",
+  "description": "This data set provides a daily snow cover fraction derived from the \"MODIS/Terra Snow Cover 5-Min L2 Swath 500m\" data set (DOI:10.5067/MODIS/MOD10_L2.061). The dataset is reprojected and regridded to a specific area of interest (Senales catchment). The original MODIS snow-cover products provide Normalized Difference Snow Index (NDSI) values from 0 \u2013 100.  NDSI is then converted to snow cover fraction (SCF) from 0 \u2013 100 (Salomonson and Appel, 2004; Riggs et al., 2019). Clouds are marked as 205.",
+  "links": [
+    {
+      "rel": "items",
+      "href": "https://stac.eurac.edu/collections/MOD10A1v61/items",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "items",
+      "href": "http://10.8.244.74:8082/collections/MOD10A1v61/items",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/eo/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/datacube/v2.2.0/schema.json"
+  ],
+  "sci:doi": "10.5067/MODIS/MOD10A1.061",
+  "sci:citation": "Hall, D. K. and G. A. Riggs. (2021). MODIS/Terra Snow Cover Daily L3 Global 500m SIN Grid, Version 61 [Data Set]. Boulder, Colorado USA. NASA National Snow and Ice Data Center Distributed Active Archive Center.",
+  "cube:dimensions": {
+    "x": {
+      "axis": "x",
+      "type": "spatial",
+      "extent": [
+        632050.0,
+        655550.0
+      ],
+      "reference_system": 32632
+    },
+    "y": {
+      "axis": "y",
+      "type": "spatial",
+      "extent": [
+        5167950.0,
+        5183950.0
+      ],
+      "reference_system": 32632
+    },
+    "time": {
+      "type": "temporal",
+      "extent": [
+        "2016-01-01T00:00:00.000000000",
+        "2023-02-01T00:00:00.000000000"
+      ]
+    },
+    "bands": {
+      "type": "bands",
+      "values": [
+        "SCF"
+      ]
+    }
+  },
+  "title": "MOD10A1 daily snow cover fraction for the Senales valley",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          10.722422964228954,
+          46.64474318306361,
+          11.041470996849343,
+          46.798312551732984
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2016-01-01T00:00:00Z",
+          "2023-02-01T00:00:00Z"
+        ]
+      ]
+    }
+  },
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "snow",
+    "SCF",
+    "MODIS",
+    "MOD10A1"
+  ],
+  "providers": [
+    {
+      "name": "National Snow and Ice Center",
+      "roles": [
+        "producer"
+      ],
+      "url": "https://nsidc.org/data/mod10a1/versions/61"
+    },
+    {
+      "name": "Eurac EO",
+      "roles": [
+        "host"
+      ],
+      "url": "http://www.eurac.edu"
+    }
+  ],
+  "summaries": {
+    "eo:bands": [
+      {
+        "name": "SCF"
+      }
+    ]
+  }
+}

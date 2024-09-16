@@ -1,0 +1,131 @@
+{
+  "type": "Collection",
+  "id": "CLC2018",
+  "stac_version": "1.0.0",
+  "description": "The Corine Land Cover 2018 (CLC2018) dataset is one of the datasets produced within the CORINE Land Cover Program to capture land cover/ land use status for 2018. The Corine Land Cover (CLC) is an European programme, coordinated by the European Environment Agency (EEA), providing consistent information on land cover and land cover changes across Europe. CLC products are based on the photointerpretation of satellite images by the national teams of the participating countries - the EEA member or cooperating countries. The resulting national land cover inventories are further integrated into a seamless land cover map of Europe. The resulting European database is based on standard methodology and nomenclature with following base parameters: - 44 thematic classes in the hierarchical 3-level Corine nomenclature - minimum mapping unit (MMU) for status layers is 25 hectares - minimum width of linear elements is 100 metres - minimum mapping unit (MMU) for Land Cover Changes (LCC) for change layers is 5 hectares. It is provided as 100m raster data here",
+  "links": [
+    {
+      "rel": "items",
+      "href": "https://stac.eurac.edu/collections/CLC2018/items",
+      "type": "application/geo+json"
+    },
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "items",
+      "href": "https://stac.eurac.edu/collection/CLC2018/items",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/raster/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/eo/v1.1.0/schema.json",
+    "https://stac-extensions.github.io/scientific/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/datacube/v2.2.0/schema.json"
+  ],
+  "sci:doi": "10.2909/960998c1-1870-4e82-8051-6485205ebbac",
+  "cube:dimensions": {
+    "x": {
+      "axis": "x",
+      "type": "spatial",
+      "extent": [
+        900050.0,
+        7399950.0
+      ],
+      "reference_system": 3035
+    },
+    "y": {
+      "axis": "y",
+      "type": "spatial",
+      "extent": [
+        900050.0,
+        5499950.0
+      ],
+      "reference_system": 3035
+    },
+    "time": {
+      "type": "temporal",
+      "extent": [
+        "2018-01-01",
+        "2018-01-01"
+      ]
+    },
+    "bands": {
+      "type": "bands",
+      "values": [
+        "corine_lcl"
+      ]
+    }
+  },
+  "title": "CORINE Land Cover 2018 (CLC2018), Europe (Raster 100m)",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -56.50514190170437,
+          24.28417701147754,
+          72.90613675900903,
+          58.952751092326295
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2018-01-01T00:00:00Z",
+          "2018-01-01T00:00:00Z"
+        ]
+      ]
+    }
+  },
+  "license": "proprietary",
+  "keywords": [
+    "CORINE",
+    "Land Cover",
+    "Land Use",
+    "CLC",
+    "CLC2018",
+    "Europe",
+    "Copernicus",
+    "Land Monitoring"
+  ],
+  "providers": [
+    {
+      "name": "European Environment Agency",
+      "roles": [
+        "producer"
+      ],
+      "url": "https://www.eea.europa.eu/en"
+    },
+    {
+      "name": "European Environment Agency",
+      "roles": [
+        "licensor"
+      ],
+      "url": "https://land.copernicus.eu/en/data-policy"
+    },
+    {
+      "name": "Eurac Research - Institute for Earth Observation",
+      "roles": [
+        "host"
+      ],
+      "url": "http://www.eurac.edu"
+    }
+  ],
+  "summaries": {
+    "eo:bands": [
+      {
+        "name": "corine_lcl"
+      }
+    ]
+  }
+}
