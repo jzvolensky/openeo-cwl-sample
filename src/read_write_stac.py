@@ -86,9 +86,17 @@ def main():
         logger.error("Please provide at least one STAC URL")
         sys.exit(1)
 
-    stac_urls = sys.argv[1:]
-    logger.debug(f"STAC URLs: {stac_urls}")
-    logger.debug(f"Type of STAC URLs: {type(stac_urls)}")
+    stac_urls_str = sys.argv[1]
+    logger.debug(f"Raw STAC URLs string: {stac_urls_str}")
+    logger.debug(f"Type of raw STAC URLs string: {type(stac_urls_str)}")
+
+    try:
+        stac_urls = json.loads(stac_urls_str)
+        logger.debug(f"Parsed STAC URLs: {stac_urls}")
+        logger.debug(f"Type of parsed STAC URLs: {type(stac_urls)}")
+    except json.JSONDecodeError as e:
+        logger.error(f"Failed to parse STAC URLs JSON: {e}")
+        sys.exit(1)
 
     stac_objects = read_stac(stac_urls)
     print_stac_info(stac_objects)
