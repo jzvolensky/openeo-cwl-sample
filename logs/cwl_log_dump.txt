@@ -1,0 +1,472 @@
+Created k8s pod name node-stac-pod-vfykzijq with id db0c1fe3-b0ac-4ae9-928e-96fb311de4f2
+PodMonitor adding node-stac-pod-vfykzijq
+k8s pod 'node-stac-pod-vfykzijq' started
+pod name node-stac-pod-vfykzijq with id db0c1fe3-b0ac-4ae9-928e-96fb311de4f2 has status None
+pod name node-stac-pod-vfykzijq with id db0c1fe3-b0ac-4ae9-928e-96fb311de4f2 has status None
+pod name node-stac-pod-vfykzijq with id db0c1fe3-b0ac-4ae9-928e-96fb311de4f2 has status {'container_id': None,
+ 'image': 'potato55/openeo-cwl-sample:0.2',
+ 'image_id': '',
+ 'last_state': {'running': None, 'terminated': None, 'waiting': None},
+ 'name': 'node-stac-container',
+ 'ready': False,
+ 'restart_count': 0,
+ 'state': {'running': None,
+           'terminated': None,
+           'waiting': {'message': None, 'reason': 'ContainerCreating'}}}
+pod name node-stac-pod-vfykzijq with id db0c1fe3-b0ac-4ae9-928e-96fb311de4f2 has status {'container_id': 'docker://2a80d6c55c77d9a4e305211502ea58b85d30f6d8c14cf7cbe5911b664f929e38',
+ 'image': 'potato55/openeo-cwl-sample:0.2',
+ 'image_id': 'docker-pullable://potato55/openeo-cwl-sample@sha256:d17feeb5a8ddb0f4580028764c13db86f8957f512ba256a42d62a0e8cb8f00e2',
+ 'last_state': {'running': None, 'terminated': None, 'waiting': None},
+ 'name': 'node-stac-container',
+ 'ready': True,
+ 'restart_count': 0,
+ 'state': {'running': {'started_at': datetime.datetime(2024, 9, 16, 13, 27, 21, tzinfo=tzlocal())},
+           'terminated': None,
+           'waiting': None}}
+[node-stac-pod-vfykzijq] follow_logs start
+[node-stac-pod-vfykzijq] 2024-09-16 13:27:21,874 - __main__ - DEBUG - Script arguments: ['/app/read_write_stac.py', '[ "https:\\/\\/stac.eurac.edu\\/collections\\/MOD10A1v61", "https:\\/\\/stac.eurac.edu\\/collections\\/SENTINEL2_L2A_SAMPLE_2", "https:\\/\\/stac.eurac.edu\\/collections\\/CLC2018" ]']
+[node-stac-pod-vfykzijq] 2024-09-16 13:27:21,874 - __main__ - DEBUG - Number of arguments: 2
+[node-stac-pod-vfykzijq] 2024-09-16 13:27:21,874 - __main__ - DEBUG - Raw STAC URLs string: [ "https:\/\/stac.eurac.edu\/collections\/MOD10A1v61", "https:\/\/stac.eurac.edu\/collections\/SENTINEL2_L2A_SAMPLE_2", "https:\/\/stac.eurac.edu\/collections\/CLC2018" ]
+[node-stac-pod-vfykzijq] 2024-09-16 13:27:21,874 - __main__ - DEBUG - Type of raw STAC URLs string: <class 'str'>
+[node-stac-pod-vfykzijq] 2024-09-16 13:27:21,874 - __main__ - DEBUG - Parsed STAC URLs: ['https://stac.eurac.edu/collections/MOD10A1v61', 'https://stac.eurac.edu/collections/SENTINEL2_L2A_SAMPLE_2', 'https://stac.eurac.edu/collections/CLC2018']
+[node-stac-pod-vfykzijq] 2024-09-16 13:27:21,874 - __main__ - DEBUG - Type of parsed STAC URLs: <class 'list'>
+[node-stac-pod-vfykzijq] 2024-09-16 13:27:21,876 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): stac.eurac.edu:443
+[node-stac-pod-vfykzijq] 2024-09-16 13:27:22,160 - urllib3.connectionpool - DEBUG - https://stac.eurac.edu:443 "GET /collections/MOD10A1v61 HTTP/11" 200 1128
+[node-stac-pod-vfykzijq] 2024-09-16 13:27:22,163 - __main__ - INFO - Read STAC from https://stac.eurac.edu/collections/MOD10A1v61
+[node-stac-pod-vfykzijq] 2024-09-16 13:27:22,165 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): stac.eurac.edu:443
+[node-stac-pod-vfykzijq] 2024-09-16 13:27:22,175 - urllib3.connectionpool - DEBUG - https://stac.eurac.edu:443 "GET /collections/SENTINEL2_L2A_SAMPLE_2 HTTP/11" 200 1114
+[node-stac-pod-vfykzijq] 2024-09-16 13:27:22,177 - __main__ - INFO - Read STAC from https://stac.eurac.edu/collections/SENTINEL2_L2A_SAMPLE_2
+[node-stac-pod-vfykzijq] 2024-09-16 13:27:22,178 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): stac.eurac.edu:443
+[node-stac-pod-vfykzijq] 2024-09-16 13:27:22,187 - urllib3.connectionpool - DEBUG - https://stac.eurac.edu:443 "GET /collections/CLC2018 HTTP/11" 200 1268
+[node-stac-pod-vfykzijq] 2024-09-16 13:27:22,188 - __main__ - INFO - Read STAC from https://stac.eurac.edu/collections/CLC2018
+[node-stac-pod-vfykzijq] 2024-09-16 13:27:22,189 - __main__ - INFO - STAC ID: MOD10A1v61
+[node-stac-pod-vfykzijq] 2024-09-16 13:27:22,189 - __main__ - INFO - STAC Description: This data set provides a daily snow cover fraction derived from the "MODIS/Terra Snow Cover 5-Min L2 Swath 500m" data set (DOI:10.5067/MODIS/MOD10_L2.061). The dataset is reprojected and regridded to a specific area of interest (Senales catchment). The original MODIS snow-cover products provide Normalized Difference Snow Index (NDSI) values from 0 – 100.  NDSI is then converted to snow cover fraction (SCF) from 0 – 100 (Salomonson and Appel, 2004; Riggs et al., 2019). Clouds are marked as 205.
+[node-stac-pod-vfykzijq] 2024-09-16 13:27:22,189 - __main__ - INFO - STAC ID: SENTINEL2_L2A_SAMPLE_2
+[node-stac-pod-vfykzijq] 2024-09-16 13:27:22,189 - __main__ - INFO - STAC Description: Tiny sample Sentinel-2 data collection (different dimension names for temporal (time) and bands (band) compared to the SENTINEL2_L2A_SAMPLE collection), generated using openEO, stored initially as netCDF and splitted later into separate COGs (one for each band and each date) for more interoperability.
+[node-stac-pod-vfykzijq] 2024-09-16 13:27:22,189 - __main__ - INFO - STAC ID: CLC2018
+[node-stac-pod-vfykzijq] 2024-09-16 13:27:22,189 - __main__ - INFO - STAC Description: The Corine Land Cover 2018 (CLC2018) dataset is one of the datasets produced within the CORINE Land Cover Program to capture land cover/ land use status for 2018. The Corine Land Cover (CLC) is an European programme, coordinated by the European Environment Agency (EEA), providing consistent information on land cover and land cover changes across Europe. CLC products are based on the photointerpretation of satellite images by the national teams of the participating countries - the EEA member or cooperating countries. The resulting national land cover inventories are further integrated into a seamless land cover map of Europe. The resulting European database is based on standard methodology and nomenclature with following base parameters: - 44 thematic classes in the hierarchical 3-level Corine nomenclature - minimum mapping unit (MMU) for status layers is 25 hectares - minimum width of linear elements is 100 metres - minimum mapping unit (MMU) for Land Cover Changes (LCC) for change layers is 5 hectares. It is provided as 100m raster data here
+[node-stac-pod-vfykzijq] 2024-09-16 13:27:22,194 - __main__ - INFO - New catalog written to output_catalog
+[node-stac-pod-vfykzijq] follow_logs end
+pod name node-stac-pod-vfykzijq with id db0c1fe3-b0ac-4ae9-928e-96fb311de4f2 has status {'container_id': 'docker://2a80d6c55c77d9a4e305211502ea58b85d30f6d8c14cf7cbe5911b664f929e38',
+ 'image': 'potato55/openeo-cwl-sample:0.2',
+ 'image_id': 'docker-pullable://potato55/openeo-cwl-sample@sha256:d17feeb5a8ddb0f4580028764c13db86f8957f512ba256a42d62a0e8cb8f00e2',
+ 'last_state': {'running': None, 'terminated': None, 'waiting': None},
+ 'name': 'node-stac-container',
+ 'ready': False,
+ 'restart_count': 0,
+ 'state': {'running': None,
+           'terminated': {'container_id': 'docker://2a80d6c55c77d9a4e305211502ea58b85d30f6d8c14cf7cbe5911b664f929e38',
+                          'exit_code': 0,
+                          'finished_at': datetime.datetime(2024, 9, 16, 13, 27, 22, tzinfo=tzlocal()),
+                          'message': None,
+                          'reason': 'Completed',
+                          'signal': None,
+                          'started_at': datetime.datetime(2024, 9, 16, 13, 27, 21, tzinfo=tzlocal())},
+           'waiting': None}}
+Handling terminated pod name node-stac-pod-vfykzijq with id db0c1fe3-b0ac-4ae9-928e-96fb311de4f2
+handling completion with 0
+PodMonitor removing node-stac-pod-vfykzijq
+Writing pod node_stac logs to /calrissian/node_stac.log
+DEBUG [step node_stac] produced output {
+    "file:///workflow-input/..2024_09_16_13_27_14.752392160/workflow.cwl#openeo-workflow/node_stac/stac_catalog": {
+        "location": "file:///calrissian/kuj97ydi",
+        "basename": "kuj97ydi",
+        "nameroot": "kuj97ydi",
+        "nameext": "",
+        "class": "Directory"
+    }
+}
+INFO [step node_stac] completed success
+INFO [workflow on_stage] completed success
+DEBUG [workflow on_stage] outputs {
+    "stac_catalog": {
+        "location": "file:///calrissian/kuj97ydi",
+        "basename": "kuj97ydi",
+        "nameroot": "kuj97ydi",
+        "nameext": "",
+        "class": "Directory"
+    }
+}
+DEBUG [step on_stage] produced output {
+    "file:///workflow-input/..2024_09_16_13_27_14.752392160/workflow.cwl#main/on_stage/stac_catalog": {
+        "location": "file:///calrissian/kuj97ydi",
+        "basename": "kuj97ydi",
+        "nameroot": "kuj97ydi",
+        "nameext": "",
+        "class": "Directory"
+    }
+}
+INFO [step on_stage] completed success
+shutil.rmtree(/tmp/vf77y50q, True)
+shutil.rmtree(/tmp/r9tfmeoz, True)
+DEBUG restore [ram: 4096, cores: 2] to available [ram: 198.9672959999998, cores: 0.0]
+INFO [workflow ] starting step node_stage_out
+DEBUG [step node_stage_out] job input {
+    "file:///workflow-input/..2024_09_16_13_27_14.752392160/workflow.cwl#main/node_stage_out/STAGEOUT_AWS_ACCESS_KEY_ID": "eoepca",
+    "file:///workflow-input/..2024_09_16_13_27_14.752392160/workflow.cwl#main/node_stage_out/STAGEOUT_AWS_REGION": "RegionOne",
+    "file:///workflow-input/..2024_09_16_13_27_14.752392160/workflow.cwl#main/node_stage_out/STAGEOUT_AWS_SECRET_ACCESS_KEY": "changeme",
+    "file:///workflow-input/..2024_09_16_13_27_14.752392160/workflow.cwl#main/node_stage_out/STAGEOUT_AWS_SERVICEURL": "http://minio.192-168-49-2.nip.io",
+    "file:///workflow-input/..2024_09_16_13_27_14.752392160/workflow.cwl#main/node_stage_out/STAGEOUT_OUTPUT": "eoepca",
+    "file:///workflow-input/..2024_09_16_13_27_14.752392160/workflow.cwl#main/node_stage_out/collection_id": "47846fda-742f-11ef-bd03-0242ac110008",
+    "file:///workflow-input/..2024_09_16_13_27_14.752392160/workflow.cwl#main/node_stage_out/process": "processing-results/47846fda-742f-11ef-bd03-0242ac110008",
+    "file:///workflow-input/..2024_09_16_13_27_14.752392160/workflow.cwl#main/node_stage_out/wf_outputs": {
+        "location": "file:///calrissian/kuj97ydi",
+        "basename": "kuj97ydi",
+        "nameroot": "kuj97ydi",
+        "nameext": "",
+        "class": "Directory"
+    }
+}
+DEBUG [step node_stage_out] evaluated job input to {
+    "file:///workflow-input/..2024_09_16_13_27_14.752392160/workflow.cwl#main/node_stage_out/STAGEOUT_AWS_ACCESS_KEY_ID": "eoepca",
+    "file:///workflow-input/..2024_09_16_13_27_14.752392160/workflow.cwl#main/node_stage_out/STAGEOUT_AWS_REGION": "RegionOne",
+    "file:///workflow-input/..2024_09_16_13_27_14.752392160/workflow.cwl#main/node_stage_out/STAGEOUT_AWS_SECRET_ACCESS_KEY": "changeme",
+    "file:///workflow-input/..2024_09_16_13_27_14.752392160/workflow.cwl#main/node_stage_out/STAGEOUT_AWS_SERVICEURL": "http://minio.192-168-49-2.nip.io",
+    "file:///workflow-input/..2024_09_16_13_27_14.752392160/workflow.cwl#main/node_stage_out/STAGEOUT_OUTPUT": "eoepca",
+    "file:///workflow-input/..2024_09_16_13_27_14.752392160/workflow.cwl#main/node_stage_out/collection_id": "47846fda-742f-11ef-bd03-0242ac110008",
+    "file:///workflow-input/..2024_09_16_13_27_14.752392160/workflow.cwl#main/node_stage_out/process": "processing-results/47846fda-742f-11ef-bd03-0242ac110008",
+    "file:///workflow-input/..2024_09_16_13_27_14.752392160/workflow.cwl#main/node_stage_out/wf_outputs": {
+        "location": "file:///calrissian/kuj97ydi",
+        "basename": "kuj97ydi",
+        "nameroot": "kuj97ydi",
+        "nameext": "",
+        "class": "Directory"
+    }
+}
+INFO [step node_stage_out] start
+DEBUG [job node_stage_out] initializing from file:///workflow-input/..2024_09_16_13_27_14.752392160/workflow.cwl#main/node_stage_out/stage-out as part of step node_stage_out
+DEBUG [job node_stage_out] {
+    "STAGEOUT_AWS_ACCESS_KEY_ID": "eoepca",
+    "STAGEOUT_AWS_REGION": "RegionOne",
+    "STAGEOUT_AWS_SECRET_ACCESS_KEY": "changeme",
+    "STAGEOUT_AWS_SERVICEURL": "http://minio.192-168-49-2.nip.io",
+    "STAGEOUT_OUTPUT": "eoepca",
+    "collection_id": "47846fda-742f-11ef-bd03-0242ac110008",
+    "process": "processing-results/47846fda-742f-11ef-bd03-0242ac110008",
+    "wf_outputs": {
+        "location": "file:///calrissian/kuj97ydi",
+        "basename": "kuj97ydi",
+        "nameroot": "kuj97ydi",
+        "nameext": "",
+        "class": "Directory",
+        "listing": [
+            {
+                "class": "Directory",
+                "location": "file:///calrissian/kuj97ydi/output_catalog",
+                "basename": "output_catalog",
+                "listing": [
+                    {
+                        "class": "File",
+                        "location": "file:///calrissian/kuj97ydi/output_catalog/catalog.json",
+                        "basename": "catalog.json",
+                        "size": 873
+                    },
+                    {
+                        "class": "Directory",
+                        "location": "file:///calrissian/kuj97ydi/output_catalog/SENTINEL2_L2A_SAMPLE_2",
+                        "basename": "SENTINEL2_L2A_SAMPLE_2",
+                        "listing": [
+                            {
+                                "class": "File",
+                                "location": "file:///calrissian/kuj97ydi/output_catalog/SENTINEL2_L2A_SAMPLE_2/collection.json",
+                                "basename": "collection.json",
+                                "size": 4297
+                            }
+                        ]
+                    },
+                    {
+                        "class": "Directory",
+                        "location": "file:///calrissian/kuj97ydi/output_catalog/MOD10A1v61",
+                        "basename": "MOD10A1v61",
+                        "listing": [
+                            {
+                                "class": "File",
+                                "location": "file:///calrissian/kuj97ydi/output_catalog/MOD10A1v61/collection.json",
+                                "basename": "collection.json",
+                                "size": 3221
+                            }
+                        ]
+                    },
+                    {
+                        "class": "Directory",
+                        "location": "file:///calrissian/kuj97ydi/output_catalog/CLC2018",
+                        "basename": "CLC2018",
+                        "listing": [
+                            {
+                                "class": "File",
+                                "location": "file:///calrissian/kuj97ydi/output_catalog/CLC2018/collection.json",
+                                "basename": "collection.json",
+                                "size": 3781
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
+DEBUG [job node_stage_out] path mappings is {
+    "file:///calrissian/kuj97ydi": [
+        "/calrissian/kuj97ydi",
+        "/var/lib/cwl/stg56b39456-6133-4e7d-a63f-fd916c701bd2/kuj97ydi",
+        "Directory",
+        true
+    ],
+    "file:///calrissian/kuj97ydi/output_catalog": [
+        "/calrissian/kuj97ydi/output_catalog",
+        "/var/lib/cwl/stg56b39456-6133-4e7d-a63f-fd916c701bd2/kuj97ydi/output_catalog",
+        "Directory",
+        false
+    ],
+    "file:///calrissian/kuj97ydi/output_catalog/catalog.json": [
+        "/calrissian/kuj97ydi/output_catalog/catalog.json",
+        "/var/lib/cwl/stg56b39456-6133-4e7d-a63f-fd916c701bd2/kuj97ydi/output_catalog/catalog.json",
+        "File",
+        false
+    ],
+    "file:///calrissian/kuj97ydi/output_catalog/SENTINEL2_L2A_SAMPLE_2": [
+        "/calrissian/kuj97ydi/output_catalog/SENTINEL2_L2A_SAMPLE_2",
+        "/var/lib/cwl/stg56b39456-6133-4e7d-a63f-fd916c701bd2/kuj97ydi/output_catalog/SENTINEL2_L2A_SAMPLE_2",
+        "Directory",
+        false
+    ],
+    "file:///calrissian/kuj97ydi/output_catalog/SENTINEL2_L2A_SAMPLE_2/collection.json": [
+        "/calrissian/kuj97ydi/output_catalog/SENTINEL2_L2A_SAMPLE_2/collection.json",
+        "/var/lib/cwl/stg56b39456-6133-4e7d-a63f-fd916c701bd2/kuj97ydi/output_catalog/SENTINEL2_L2A_SAMPLE_2/collection.json",
+        "File",
+        false
+    ],
+    "file:///calrissian/kuj97ydi/output_catalog/MOD10A1v61": [
+        "/calrissian/kuj97ydi/output_catalog/MOD10A1v61",
+        "/var/lib/cwl/stg56b39456-6133-4e7d-a63f-fd916c701bd2/kuj97ydi/output_catalog/MOD10A1v61",
+        "Directory",
+        false
+    ],
+    "file:///calrissian/kuj97ydi/output_catalog/MOD10A1v61/collection.json": [
+        "/calrissian/kuj97ydi/output_catalog/MOD10A1v61/collection.json",
+        "/var/lib/cwl/stg56b39456-6133-4e7d-a63f-fd916c701bd2/kuj97ydi/output_catalog/MOD10A1v61/collection.json",
+        "File",
+        false
+    ],
+    "file:///calrissian/kuj97ydi/output_catalog/CLC2018": [
+        "/calrissian/kuj97ydi/output_catalog/CLC2018",
+        "/var/lib/cwl/stg56b39456-6133-4e7d-a63f-fd916c701bd2/kuj97ydi/output_catalog/CLC2018",
+        "Directory",
+        false
+    ],
+    "file:///calrissian/kuj97ydi/output_catalog/CLC2018/collection.json": [
+        "/calrissian/kuj97ydi/output_catalog/CLC2018/collection.json",
+        "/var/lib/cwl/stg56b39456-6133-4e7d-a63f-fd916c701bd2/kuj97ydi/output_catalog/CLC2018/collection.json",
+        "File",
+        false
+    ]
+}
+DEBUG [job node_stage_out] command line bindings is [
+    {
+        "position": [
+            -1000000,
+            0
+        ],
+        "datum": "python"
+    },
+    {
+        "position": [
+            -1000000,
+            1
+        ],
+        "datum": "stageout.py"
+    },
+    {
+        "position": [
+            0,
+            0
+        ],
+        "valueFrom": "$( inputs.STAGEOUT_OUTPUT )"
+    },
+    {
+        "position": [
+            0,
+            1
+        ],
+        "valueFrom": "$( inputs.process )"
+    },
+    {
+        "position": [
+            0,
+            2
+        ],
+        "valueFrom": "$( inputs.collection_id )"
+    },
+    {
+        "valueFrom": "${\n  if( !Array.isArray(inputs.wf_outputs) ) \n  {\n    return inputs.wf_outputs.path;\n  }\n  var args=[];\n  for (var i = 0; i < inputs.wf_outputs.length; i++) \n  {\n    args.push(inputs.wf_outputs[i].path);\n  }\n  return args;\n}\n",
+        "position": [
+            0,
+            3
+        ]
+    }
+]
+DEBUG wait_for_completion with 0 futures
+DEBUG allocate [ram: 1024, cores: 1] from available [ram: 4294.967296, cores: 2.0]
+DEBUG wait_for_completion with 1 futures
+DEBUG [job node_stage_out] initial work dir {
+    "_:10614b7a-5c26-4cd2-a00c-3b2f64e135a5": [
+        "import os\nimport sys\nimport pystac\nimport botocore\nimport boto3\nimport shutil\nfrom pystac.stac_io import DefaultStacIO, StacIO\nfrom urllib.parse import urlparse\nfrom datetime import datetime\n\nbucket = sys.argv[1]\nsubfolder = sys.argv[2]\ncollection_id = sys.argv[3]\nprint(f\"bucket: {bucket}\", file=sys.stderr)\nprint(f\"subfolder: {subfolder}\", file=sys.stderr)\nprint(f\"collection_id: {collection_id}\", file=sys.stderr)\n\n# cat_url\n# Should really be one or more, for cwl outputs of type Directory[]\n# - but as a quick fix we just take the first one for now.\ncat_url = sys.argv[4]\nprint(f\"cat_url: {cat_url}\", file=sys.stderr)\n\naws_access_key_id = os.environ[\"AWS_ACCESS_KEY_ID\"]\naws_secret_access_key = os.environ[\"AWS_SECRET_ACCESS_KEY\"]\nregion_name = os.environ[\"AWS_REGION\"]\nendpoint_url = os.environ[\"AWS_S3_ENDPOINT\"]\nprint(f\"aws_access_key_id: {aws_access_key_id}\", file=sys.stderr)\nprint(f\"aws_secret_access_key: {aws_secret_access_key}\", file=sys.stderr)\nprint(f\"region_name: {region_name}\", file=sys.stderr)\nprint(f\"endpoint_url: {endpoint_url}\", file=sys.stderr)\n\nshutil.copytree(cat_url, \"/tmp/catalog\")\ncat = pystac.read_file(os.path.join(\"/tmp/catalog\", \"catalog.json\"))\n\nclass CustomStacIO(DefaultStacIO):\n    \"\"\"Custom STAC IO class that uses boto3 to read from S3.\"\"\"\n\n    def __init__(self):\n        self.session = botocore.session.Session()\n        self.s3_client = self.session.create_client(\n            service_name=\"s3\",\n            use_ssl=True,\n            aws_access_key_id=aws_access_key_id,\n            aws_secret_access_key=aws_secret_access_key,\n            endpoint_url=endpoint_url,\n            region_name=region_name,\n        )\n\n    def write_text(self, dest, txt, *args, **kwargs):\n        parsed = urlparse(dest)\n        if parsed.scheme == \"s3\":\n
+self.s3_client.put_object(\n                Body=txt.encode(\"UTF-8\"),\n                Bucket=parsed.netloc,\n                Key=parsed.path[1:],\n                ContentType=\"application/geo+json\",\n            )\n        else:\n            super().write_text(dest, txt, *args, **kwargs)\n\n\nclient = boto3.client(\n    \"s3\",\n    aws_access_key_id=aws_access_key_id,\n    aws_secret_access_key=aws_secret_access_key,\n    endpoint_url=endpoint_url,\n    region_name=region_name,\n)\n\nStacIO.set_default(CustomStacIO)\n\n# create a STAC collection for the process\ndate = datetime.now().strftime(\"%Y-%m-%d\")\n\ndates = [datetime.strptime(\n    f\"{date}T00:00:00\", \"%Y-%m-%dT%H:%M:%S\"\n), datetime.strptime(f\"{date}T23:59:59\", \"%Y-%m-%dT%H:%M:%S\")]\n\ncollection = pystac.Collection(\n  id=collection_id,\n  description=\"description\",\n  extent=pystac.Extent(\n    spatial=pystac.SpatialExtent([[-180, -90, 180, 90]]), \n    temporal=pystac.TemporalExtent(intervals=[[min(dates), max(dates)]])\n  ),\n  title=\"Processing results\",\n  href=f\"s3://{bucket}/{subfolder}/collection.json\",\n  stac_extensions=[],\n  keywords=[\"eoepca\"],\n  license=\"proprietary\",\n)\n\nfor index, link in enumerate(cat.links):\n  if link.rel == \"root\":\n      cat.links.pop(index) # remove root link\n\nfor item in cat.get_items():\n\n    item.set_collection(collection)\n    \n    collection.add_item(item)\n    \n    for key, asset in item.get_assets().items():\n        s3_path = os.path.normpath(\n            os.path.join(subfolder, collection_id, item.id, os.path.basename(asset.href))\n        )\n        print(f\"upload {asset.href} to s3://{bucket}/{s3_path}\",file=sys.stderr)\n        client.upload_file(\n            asset.get_absolute_href(),\n            bucket,\n            s3_path,\n        )\n        asset.href = f\"s3://{bucket}/{s3_path}\"\n        item.add_asset(key, asset)\n\ncollection.update_extent_from_items() \n\ncat.clear_items()\n\ncat.add_child(collection)\n\ncat.normalize_hrefs(f\"s3://{bucket}/{subfolder}\")\n\nfor item in collection.get_items():\n    # upload item to S3\n    print(f\"upload {item.id} to s3://{bucket}/{subfolder}\", file=sys.stderr)\n    pystac.write_file(item, item.get_self_href())\n\n# upload collection to S3\nprint(f\"upload collection.json to s3://{bucket}/{subfolder}\", file=sys.stderr)\npystac.write_file(collection, collection.get_self_href())\n\n# upload catalog to S3\nprint(f\"upload catalog.json to s3://{bucket}/{subfolder}\", file=sys.stderr)\npystac.write_file(cat, cat.get_self_href())\n\nprint(f\"s3://{bucket}/{subfolder}/catalog.json\", file=sys.stdout)",
+        "/wKwBfC/stageout.py",
+        "CreateFile",
+        true
+    ]
+}
+Building resources spec from {'cores': 1, 'ram': 1024}
+--------------------------------------------------------------------------------
+apiVersion: v1
+kind: Pod
+metadata:
+  labels: {}
+  name: node-stage-out-pod-knfhzghl
+spec:
+  containers:
+  - args:
+    - python stageout.py eoepca processing-results/47846fda-742f-11ef-bd03-0242ac110008
+      47846fda-742f-11ef-bd03-0242ac110008 /var/lib/cwl/stg56b39456-6133-4e7d-a63f-fd916c701bd2/kuj97ydi
+    command:
+    - /bin/sh
+    - -c
+    env:
+    - name: A
+      value: '1'
+    - name: AWS_ACCESS_KEY_ID
+      value: eoepca
+    - name: AWS_REGION
+      value: RegionOne
+    - name: AWS_S3_ENDPOINT
+      value: http://minio.192-168-49-2.nip.io
+    - name: AWS_SECRET_ACCESS_KEY
+      value: changeme
+    - name: B
+      value: '2'
+    - name: HOME
+      value: /wKwBfC
+    - name: TMPDIR
+      value: /tmp
+    image: ghcr.io/terradue/ogc-eo-application-package-hands-on/stage:1.3.2
+    name: node-stage-out-container
+    resources:
+      requests:
+        cpu: '1'
+        memory: 1024Mi
+    volumeMounts:
+    - mountPath: /wKwBfC
+      name: calrissian-wdir
+      readOnly: false
+      subPath: w1t4zm9u
+    - mountPath: /tmp
+      name: tmpdir
+    - mountPath: /var/lib/cwl/stg56b39456-6133-4e7d-a63f-fd916c701bd2/kuj97ydi
+      name: calrissian-wdir
+      readOnly: true
+      subPath: kuj97ydi
+    workingDir: /wKwBfC
+  initContainers: []
+  nodeSelector: {}
+  restartPolicy: Never
+  securityContext:
+    runAsGroup: 0
+    runAsUser: 0
+  volumes:
+  - name: calrissian-wdir
+    persistentVolumeClaim:
+      claimName: calrissian-wdir
+      readOnly: false
+  - emptyDir: {}
+    name: tmpdir
+--------------------------------------------------------------------------------
+
+Created k8s pod name node-stage-out-pod-knfhzghl with id 9b933a99-d2bf-491f-94e1-fa1234bdb56b
+PodMonitor adding node-stage-out-pod-knfhzghl
+k8s pod 'node-stage-out-pod-knfhzghl' started
+pod name node-stage-out-pod-knfhzghl with id 9b933a99-d2bf-491f-94e1-fa1234bdb56b has status None
+pod name node-stage-out-pod-knfhzghl with id 9b933a99-d2bf-491f-94e1-fa1234bdb56b has status None
+pod name node-stage-out-pod-knfhzghl with id 9b933a99-d2bf-491f-94e1-fa1234bdb56b has status {'container_id': None,
+ 'image': 'ghcr.io/terradue/ogc-eo-application-package-hands-on/stage:1.3.2',
+ 'image_id': '',
+ 'last_state': {'running': None, 'terminated': None, 'waiting': None},
+ 'name': 'node-stage-out-container',
+ 'ready': False,
+ 'restart_count': 0,
+ 'state': {'running': None,
+           'terminated': None,
+           'waiting': {'message': None, 'reason': 'ContainerCreating'}}}
+pod name node-stage-out-pod-knfhzghl with id 9b933a99-d2bf-491f-94e1-fa1234bdb56b has status {'container_id': 'docker://85ca230c23c5009d95225bf0c00c144273e1e8ee9e9de9bb81526162319bebe5',
+ 'image': 'ghcr.io/terradue/ogc-eo-application-package-hands-on/stage:1.3.2',
+ 'image_id': 'docker-pullable://ghcr.io/terradue/ogc-eo-application-package-hands-on/stage@sha256:02b81d58e6170d1b7f94396efe02e8a8c57b783593491c2eea3e7b701c3596fc',
+ 'last_state': {'running': None, 'terminated': None, 'waiting': None},
+ 'name': 'node-stage-out-container',
+ 'ready': False,
+ 'restart_count': 0,
+ 'state': {'running': None,
+           'terminated': {'container_id': 'docker://85ca230c23c5009d95225bf0c00c144273e1e8ee9e9de9bb81526162319bebe5',
+                          'exit_code': 1,
+                          'finished_at': datetime.datetime(2024, 9, 16, 13, 27, 24, tzinfo=tzlocal()),
+                          'message': None,
+                          'reason': 'Error',
+                          'signal': None,
+                          'started_at': datetime.datetime(2024, 9, 16, 13, 27, 24, tzinfo=tzlocal())},
+           'waiting': None}}
+Handling terminated pod name node-stage-out-pod-knfhzghl with id 9b933a99-d2bf-491f-94e1-fa1234bdb56b
+handling completion with 1
+PodMonitor removing node-stage-out-pod-knfhzghl
+Writing pod node_stage_out logs to /calrissian/node_stage_out.log
+DEBUG [step node_stage_out] produced output {
+    "file:///workflow-input/..2024_09_16_13_27_14.752392160/workflow.cwl#main/node_stage_out/StacCatalogUri": "s3://eoepca/processing-results/47846fda-742f-11ef-bd03-0242ac110008/catalog.json",
+    "file:///workflow-input/..2024_09_16_13_27_14.752392160/workflow.cwl#main/node_stage_out/stac_catalog_out": {
+        "location": "file:///calrissian/w1t4zm9u",
+        "basename": "w1t4zm9u",
+        "nameroot": "w1t4zm9u",
+        "nameext": "",
+        "class": "Directory"
+    }
+}
+WARNING [step node_stage_out] completed permanentFail
+INFO [workflow ] completed permanentFail
+DEBUG [workflow ] outputs {
+    "StacCatalogUri": "s3://eoepca/processing-results/47846fda-742f-11ef-bd03-0242ac110008/catalog.json",
+    "stac_catalog": {
+        "location": "file:///calrissian/w1t4zm9u",
+        "basename": "w1t4zm9u",
+        "nameroot": "w1t4zm9u",
+        "nameext": "",
+        "class": "Directory"
+    }
+}
+shutil.rmtree(/tmp/3chus72n, True)
+shutil.rmtree(/tmp/2ysa0sgi, True)
+DEBUG restore [ram: 1024, cores: 1] to available [ram: 3270.967296, cores: 1.0]
+DEBUG wait_for_completion with 0 futures
+DEBUG wait_for_completion with 0 futures
+DEBUG Finishing ThreadPoolExecutor.run_jobs: total_resources=[ram: 4294.967296, cores: 2.0], available_resources=[ram: 4294.967296, cores: 2.0]
+DEBUG Removing intermediate output directory /calrissian/w1t4zm9u
+DEBUG Removing intermediate output directory /calrissian/kuj97ydi
+{
+    "StacCatalogUri": "s3://eoepca/processing-results/47846fda-742f-11ef-bd03-0242ac110008/catalog.json",
+    "stac_catalog": {
+        "location": "file:///calrissian/w1t4zm9u",
+        "basename": "w1t4zm9u",
+        "class": "Directory",
+        "listing": [
+            {
+                "class": "File",
+                "location": "file:///calrissian/w1t4zm9u/stageout.py",
+                "basename": "stageout.py",
+                "checksum": "sha1$c5f63fc1bcb77d91fc44c0b06b1c8d5b6d00fce5",
+                "size": 4302,
+                "path": "/calrissian/w1t4zm9u/stageout.py"
+            }
+        ],
+        "path": "/calrissian/w1t4zm9u"
+    }
+DEBUG Removing intermediate output directory /calrissian/yo3lo1yo
+DEBUG Removing intermediate output directory /calrissian/u_a6ilq_
+WARNING Final process status is permanentFail
+Starting Cleanup
+Finishing Cleanup

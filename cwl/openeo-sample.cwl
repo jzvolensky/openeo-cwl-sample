@@ -2,7 +2,7 @@ cwlVersion: v1.0
 $namespaces:
   s: https://schema.org/
 s:softwareVersion: 0.0.1
-s:dateCreated: '2024-06-05'
+s:dateCreated: '2024-09-16'
 s:keywords: OpenEO, EO, CWL, AP, InterTwin, Magic
 s:codeRepository: https://github.com/jzvolensky/Itwin-tech-meeting
 s:releaseNotes: https://github.com/jzvolensky/Itwin-tech-meeting/blob/main/README.md
@@ -45,8 +45,8 @@ $graph:
           PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
           PYTHONPATH: /app
       ResourceRequirement:
-        ramMin: 1024
-        ramMax: 4096
+        ramMin: 512
+        ramMax: 1024
         coresMin: 1
         coresMax: 2
     hints:

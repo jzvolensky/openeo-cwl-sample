@@ -138,7 +138,6 @@ GET {{scheme}}://{{ades}}/{{username}}/ogc-api/jobs HTTP/1.1
 Authorization: Bearer {{accessToken}}
 Accept: application/json
 
-###
 
 # @name deployProcessCWL
 POST {{scheme}}://{{ades}}/{{username}}/ogc-api/processes HTTP/1.1
