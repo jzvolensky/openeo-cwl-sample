@@ -14,7 +14,7 @@ s:author:
 
 $graph:
   - class: Workflow
-    id: main
+    id: openeo-workflow
     label: Sample workflow to test OpenEO integration with CWL
     doc: whatever will add this later if neede
     

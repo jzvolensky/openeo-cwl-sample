@@ -19,7 +19,7 @@ import requests
 from typing import List, Union
 
 logging.basicConfig(
-    level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    level=logging.DEBUG, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 )
 logger = logging.getLogger(__name__)
 
@@ -79,11 +79,17 @@ def rewrite_stac(
 
 
 def main():
+    logger.debug(f"Script arguments: {sys.argv}")
+    logger.debug(f"Number of arguments: {len(sys.argv)}")
+
     if len(sys.argv) < 2:
         logger.error("Please provide at least one STAC URL")
         sys.exit(1)
 
     stac_urls = sys.argv[1:]
+    logger.debug(f"STAC URLs: {stac_urls}")
+    logger.debug(f"Type of STAC URLs: {type(stac_urls)}")
+
     stac_objects = read_stac(stac_urls)
     print_stac_info(stac_objects)
     rewrite_stac(stac_objects, "output_catalog")
