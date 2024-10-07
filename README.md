@@ -10,18 +10,14 @@ Note: I have specifically maintained the CWL1.0 spec which has full conformance 
 
 ## Usage
 
-With `cwltool` providing the URLs manually:
+Using `params.json`:
 
 ```zsh
-cwltool openeo-sample.cwl --stac_urls https://stac.eurac.edu/collections/MOD10A1v61 \
-https://stac.eurac.edu/collections/SENTINEL2_L2A_SAMPLE_2 \
-https://stac.eurac.edu/collections/CLC2018
+cd cwl
 ```
 
-Or using `params.json`:
-
 ```zsh
-cwltool openeo-sample.cwl params.json
+cwltool openeo-sample.cwl#openeo-workflow params.json 
 ```
 
 where the `params.json` file contains the following:
