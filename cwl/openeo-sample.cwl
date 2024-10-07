@@ -2,7 +2,7 @@ cwlVersion: v1.0
 $namespaces:
   s: https://schema.org/
 s:softwareVersion: 0.0.1
-s:dateCreated: '2024-09-16'
+s:dateCreated: '2024-06-05'
 s:keywords: OpenEO, EO, CWL, AP, InterTwin, Magic
 s:codeRepository: https://github.com/jzvolensky/Itwin-tech-meeting
 s:releaseNotes: https://github.com/jzvolensky/Itwin-tech-meeting/blob/main/README.md
@@ -11,7 +11,6 @@ s:author:
   - s:name: Juraj Zvolensky
     s:email: juraj.zvolensky@eurac.edu
     s:affiliation: CWL Enthusiast
-
 $graph:
   - class: Workflow
     id: openeo-workflow
@@ -19,10 +18,9 @@ $graph:
     doc: whatever will add this later if neede
     
     inputs:
-      stac_urls:
+      stac_url:
         label: Single STAC Url or a list of STAC Url
-        type: string[]
-
+        type: string
     outputs:
       - id: stac_catalog
         outputSource:
@@ -33,10 +31,9 @@ $graph:
       node_stac:
         run: "#stac"
         in:
-          stac_urls: stac_urls
+          stac_url: stac_url
         out:
           - stac_catalog
-
   - class: CommandLineTool
     id: stac
     requirements:
@@ -45,18 +42,18 @@ $graph:
           PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
           PYTHONPATH: /app
       ResourceRequirement:
-        ramMin: 512
-        ramMax: 1024
+        ramMin: 1024
+        ramMax: 4096
         coresMin: 1
         coresMax: 2
     hints:
       DockerRequirement:
-        dockerPull: potato55/openeo-cwl-sample:0.1
+        dockerPull: potato55/openeo-cwl-sample:col #0.69 for catalog, col for collection
     baseCommand: ["python3", "/app/read_write_stac.py"]
     arguments: []
     inputs:
-      stac_urls:
-        type: string[]
+      stac_url:
+        type: string
         inputBinding:
           position: 1
     outputs:
@@ -64,4 +61,3 @@ $graph:
         outputBinding:
           glob: .
         type: Directory
-      

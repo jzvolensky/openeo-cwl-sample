@@ -1,7 +1,4 @@
 {
-    "stac_urls": [
-      "https://stac.eurac.edu/collections/MOD10A1v61",
-      "https://stac.eurac.edu/collections/SENTINEL2_L2A_SAMPLE_2",
-      "https://stac.eurac.edu/collections/CLC2018"
-    ]
+    "stac_url": 
+      "https://stac.eurac.edu/collections/MOD10A1v61"
 }
