@@ -1,0 +1,41 @@
+# Get OpenID Configuration
+curl -X GET "http://keycloak.192-168-49-2.nip.io/realms/master/.well-known/openid-configuration" -H "Accept: application/json"
+
+# Authenticate
+curl -X POST "http://keycloak.192-168-49-2.nip.io/realms/master/protocol/openid-connect/token" -H "Cache-Control: no-cache" -H "Content-Type: application/x-www-form-urlencoded" -d "scope=openid profile email&grant_type=password&username=eric&password=changeme&client_id=admin-cli"
+
+# Delete Process
+curl -X DELETE "http://zoo-open.192-168-49-2.nip.io/eric/ogc-api/processes/openeo-workflow" -H "Authorization: Bearer {{accessToken}}" -H "Accept: application/json"
+
+# List Processes
+curl -X GET "http://zoo-open.192-168-49-2.nip.io/eric/ogc-api/processes" -H "Authorization: Bearer {{accessToken}}" -H "Accept: application/json"
+
+# Deploy Process
+curl -X POST "http://zoo-open.192-168-49-2.nip.io/eric/ogc-api/processes" -H "Authorization: Bearer {{accessToken}}" -H "Accept: application/json" -H "Content-Type: application/cwl+yaml" --data-binary "@../cwl/openeo-sample.cwl"
+
+# Deploy Process JSON
+curl -X POST "http://zoo-open.192-168-49-2.nip.io/eric/ogc-api/processes" -H "Authorization: Bearer {{accessToken}}" -H "Accept: application/json" -H "Content-Type: application/json" -d '{"executionUnit": {"href": "https://raw.githubusercontent.com/jzvolensky/openeo-cwl-sample/main/cwl/openeo-sample.cwl", "type": "application/cwl"}}'
+
+# Get Deploy Status
+curl -X GET "{{deployStatus}}" -H "Authorization: Bearer {{accessToken}}" -H "Accept: application/json"
+
+# Get Process Details
+curl -X GET "http://zoo-open.192-168-49-2.nip.io/eric/ogc-api/processes/openeo-workflow" -H "Authorization: Bearer {{accessToken}}" -H "Accept: application/json"
+
+# Execute Process
+curl -X POST "http://zoo-open.192-168-49-2.nip.io/eric/ogc-api/processes/openeo-workflow/execution" -H "Authorization: Bearer {{accessToken}}" -H "Accept: application/json" -H "Content-Type: application/json" -H "Prefer: respond-async" -d '{"inputs": {"stac_urls": ["https://stac.eurac.edu/collections/MOD10A1v61", "https://stac.eurac.edu/collections/SENTINEL2_L2A_SAMPLE_2", "https://stac.eurac.edu/collections/CLC2018"]}}'
+
+# Get Execute Status
+curl -X GET "{{executeStatus}}" -H "Authorization: Bearer {{accessToken}}" -H "Accept: application/json"
+
+# Get Processing Results
+curl -X GET "{{executeStatus}}/results" -H "Authorization: Bearer {{accessToken}}" -H "Accept: application/json"
+
+# Undeploy Process
+curl -X DELETE "http://zoo-open.192-168-49-2.nip.io/eric/ogc-api/processes/openeo-workflow" -H "Authorization: Bearer {{accessToken}}" -H "Accept: application/json"
+
+# List Jobs
+curl -X GET "http://zoo-open.192-168-49-2.nip.io/eric/ogc-api/jobs" -H "Authorization: Bearer {{accessToken}}" -H "Accept: application/json"
+
+# Deploy Process CWL
+curl -X POST "http://zoo-open.192-168-49-2.nip.io/eric/ogc-api/processes" -H "Authorization: Bearer {{accessToken}}" -H "Accept: application/json" -H "Content-Type: application/cwl+yaml" --data-binary "@convert-stac-app.cwl"

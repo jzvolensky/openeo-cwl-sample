@@ -49,3 +49,13 @@ Run poetry shell:
 ```zsh
 poetry shell
 ```
+
+## Running an Application Package on the appends
+
+**Requires**: Running this from the same VM as the Zoo is deployed to.
+
+Using Visual Studio Code + the REST Client extension, run the requests in `/zoo-project-dru/app_requests.http`
+
+If you dont want to bother setting this up and want to use `curl` or similar, see requests in `/zooprojectdru/curl_requests.txt` and run them in your terminal.
+
+No need to bother with any `auth` or anything this local deployment has absolutely no security.
