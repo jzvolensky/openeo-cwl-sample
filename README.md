@@ -50,7 +50,7 @@ Run poetry shell:
 poetry shell
 ```
 
-## Running an Application Package on the appends
+## Running an Application Package on the Zoo
 
 **Requires**: Running this from the same VM as the Zoo is deployed to.
 
